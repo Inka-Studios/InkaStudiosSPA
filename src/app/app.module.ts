@@ -1,3 +1,4 @@
+import { AuthService } from './components/services/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -29,6 +30,7 @@ import {LayoutsModule} from "./components/common/layouts/layouts.module";
     RouterModule.forRoot(ROUTES)
   ],
   providers: [
+    AuthService,
     {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [
