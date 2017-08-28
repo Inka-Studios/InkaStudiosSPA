@@ -1,4 +1,3 @@
-import { AUTH_CONFIG } from './../../components/services/auth-constants';
 import { AuthService } from './../../components/services/auth.service';
 import { Component, OnDestroy, OnInit, } from '@angular/core';
 
@@ -26,11 +25,6 @@ export class StarterViewComponent implements OnDestroy, OnInit  {
   }
 
   getToken() {
-    this.token.client_id = AUTH_CONFIG.client;
-    this.token.client_secret = AUTH_CONFIG.secret;
-    this.token.grant_type = AUTH_CONFIG.grants;
-    this.token.scope = AUTH_CONFIG.scope;
-    console.log(this.token);
     this.authService.getToken(this.token)
       .subscribe(res => {
         this.token = res;

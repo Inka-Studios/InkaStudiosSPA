@@ -10,7 +10,7 @@ export class AuthService {
     constructor( private http: Http ) {}
 
     getToken(credentials) {
-        return this.http.post(SERV_CONFIG.tokenEndpointUrl, credentials)
+        return this.http.post(SERV_CONFIG.AuthUrl, '')
             .map(res => res.json());
     }
 }
